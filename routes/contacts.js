@@ -1,21 +1,12 @@
 const routes = require('express').Router();
+const connect = require('../db/connect');
 
 routes.get('/', (req, res) => {
-
-    // Ugly code
-    const dotenv = require('dotenv');
-    dotenv.config();
-
-    // Connect to MongoDB (Brother Lyon's way)
-    const MongoClient = require('mongodb').MongoClient;
-    MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
+    // Get the collection of data from the db
+    connect.getCollection().find().toArray(function(err, result) {
         if (err) throw err;
-        var dbo = db.db("contacts");
-        dbo.collection("contacts").find().toArray(function(err, result) {
-            if (err) throw err;
-            res.json(result);
-            db.close();
-        });
+        res.json(result);
+        console.log("Contacts have been retrieved");
     });
 });
 

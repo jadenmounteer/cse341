@@ -1,12 +1,12 @@
 const express = require('express');
-//const connectDB = require('./connections/Connection');
 const app = express();
-
-// Connect to the database
-//connectDB();
 
 // Configure the port we will want to listen on
 const port = process.env.PORT || 3000;
+
+// Initialize the database
+const connection = require("./db/connect");
+connection.initDatabase();
 
 // Routing
 app.use('/', require('./routes'));
