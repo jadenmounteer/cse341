@@ -1,0 +1,23 @@
+{
+    "contact1": {
+        "firstName": "Luke",
+        "lastName": "Skywalker",
+        "email": "skywalker@test.com",
+        "favoriteColor": "Green",
+        "birthday": "05/25/1977"
+    },
+    "contact2": {
+        "firstName": "Leia",
+        "lastName": "Organa",
+        "email": "princessLeia@test.com",
+        "favoriteColor": "White",
+        "birthday": "05/25/1977"
+    },
+    "contact3": {
+        "firstName": "Han",
+        "lastName": "Solo",
+        "email": "millenniumFalcon@test.com",
+        "favoriteColor": "Black",
+        "birthday": "05/25/1977"
+    }
+}
