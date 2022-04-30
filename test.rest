@@ -1,0 +1,13 @@
+GET http://localhost:3000/contacts
+
+###
+
+GET http://localhost:3000/contacts/626b49f6285a2921a81c124b
+
+### 
+
+GET https://cse341node-jadenm.herokuapp.com//contacts
+
+###
+
+GET https://cse341node-jadenm.herokuapp.com//contacts/626b49f6285a2921a81c124b
