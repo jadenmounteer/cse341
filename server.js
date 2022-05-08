@@ -1,5 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser'); // So we can parse JSON data
 const app = express();
+
+app.use(bodyParser.json()); // So we can parse JSON data that comes in from POSTs
 
 // Configure the port we will want to listen on
 const port = process.env.PORT || 3000;
