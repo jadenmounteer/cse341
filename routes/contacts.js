@@ -81,8 +81,8 @@ routes.put('/:id', (req, res) => {
 });
 
 // deletes a contact
-routes.delete('/', (req, res) => {
-  const contactId = new ObjectId(req.body.id);
+routes.delete('/:id', (req, res) => {
+  const contactId = new ObjectId(req.params.id);
   connect
     .getCollection()
     .deleteOne({ _id: contactId })

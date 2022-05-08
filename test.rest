@@ -11,3 +11,59 @@ GET https://cse341node-jadenm.herokuapp.com/contacts
 ###
 
 GET https://cse341node-jadenm.herokuapp.com/contacts/626b49f6285a2921a81c124b
+
+###
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"New contact from rest",
+    "lastName":"new contact last name",
+    "email":"newcontact@new.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+
+###
+PUT http://localhost:3000/contacts/626b49f6285a2921a81c124b HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Updated name",
+    "lastName":"new contact last name",
+    "email":"newcontact@new.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+
+###
+DELETE http://localhost:3000/contacts/626b49f6285a2921a81c124b HTTP/1.1
+
+
+// PRODUCTION DEPLOY
+###
+POST https://cse341node-jadenm.herokuapp.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"New contact from rest",
+    "lastName":"new contact last name",
+    "email":"newcontact@new.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+
+###
+PUT https://cse341node-jadenm.herokuapp.com/contacts/626b49f6285a2921a81c124b HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Updated name",
+    "lastName":"new contact last name",
+    "email":"newcontact@new.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+
+###
+DELETE https://cse341node-jadenm.herokuapp.com/contacts/626b49f6285a2921a81c124b HTTP/1.1
