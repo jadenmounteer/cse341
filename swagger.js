@@ -6,7 +6,7 @@ const doc = {
     title: 'Contacts API',
     description: 'Contacts API',
   },
-  host: 'process.env.PORT || localhost:3000',
+  host: 'https://cse341node-jadenm.herokuapp.com',
   schemes: ['http'],
 };
 
