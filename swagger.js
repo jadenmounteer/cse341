@@ -1,5 +1,6 @@
 const swaggerAutogen = require('swagger-autogen')();
 
+// TODO May need to change the host when I publish to Heroku
 const doc = {
   info: {
     title: 'Contacts API',
