@@ -6,8 +6,8 @@ const doc = {
     title: 'Contacts API',
     description: 'Contacts API',
   },
-  host: 'https://cse341node-jadenm.herokuapp.com',
-  schemes: ['http'],
+  host: 'cse341node-jadenm.herokuapp.com',
+  schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
