@@ -6,7 +6,7 @@ const doc = {
     title: 'Contacts API',
     description: 'Contacts API',
   },
-  host: 'localhost:3000',
+  host: 'process.env.PORT || localhost:3000',
   schemes: ['http'],
 };
 
