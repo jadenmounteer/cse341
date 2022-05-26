@@ -17,9 +17,9 @@ POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"New contact from rest",
+    "firstName": "test user",
     "lastName":"new contact last name",
-    "email":"newcontact@new.com",
+    "email":"gkajgaengkajgviowv2r32rt32gfwvasv",
     "favoriteColor":"Brown",
     "birthday":"06/19/2000"
 }
@@ -29,7 +29,7 @@ PUT http://localhost:3000/contacts/626b49f6285a2921a81c124b HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Updated name",
+    "firstName":"",
     "lastName":"new contact last name",
     "email":"newcontact@new.com",
     "favoriteColor":"Brown",

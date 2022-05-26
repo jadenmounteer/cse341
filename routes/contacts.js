@@ -2,6 +2,8 @@ const routes = require('express').Router();
 const connect = require('../db/connect');
 const contactsSchema = require('../models/contacts');
 const ObjectId = require('mongodb').ObjectId; // This is so we can query by the db ID
+const { validationResult } = require('express-validator');
+const { createContactValidation } = require('../validation');
 
 // Returns all the contacts
 routes.get('/', (req, res) => {
@@ -32,7 +34,14 @@ routes.get('/:id', (req, res) => {
 
 // Creates a new contact in the database
 // Returns the new contact ID in the response body
-routes.post('/', (req, res) => {
+routes.post('/', createContactValidation, (req, res) => {
+  // Get any errors
+  const errors = validationResult(req);
+
+  if (errors) {
+    // Send the errors to the view
+    res.status(422).send(errors.array());
+  }
   connect.getCollection().insertOne(req.body, (error, result) => {
     if (error) {
       return res.status(500).send(error);
@@ -42,7 +51,7 @@ routes.post('/', (req, res) => {
 });
 
 // Updates a contact based on a given id
-routes.put('/:id', (req, res) => {
+routes.put('/:id', createContactValidation, (req, res) => {
   // See if we have all of the info to update with
   if (
     !req.body.firstName ||
@@ -54,6 +63,14 @@ routes.put('/:id', (req, res) => {
     return res.status(400).send({
       message: 'Data to update can not be empty!',
     });
+  }
+
+  // Get any errors
+  const errors = validationResult(req);
+
+  if (errors) {
+    // Send the errors to the view
+    res.status(422).send(errors.array());
   }
 
   // Get the id from the request
